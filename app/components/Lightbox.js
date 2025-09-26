@@ -16,6 +16,7 @@ const Lightbox = () => {
       fullName: e.target.fullName.value,
       phone: e.target.phone.value,
       email: e.target.email.value,
+      message: e.target.message.value, // ✅ new field
     };
 
     try {
@@ -85,6 +86,14 @@ const Lightbox = () => {
               className="w-full p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500"
               required
             />
+            {/* ✅ New Message Field */}
+            <textarea
+              name="message"
+              rows="4"
+              placeholder="Your Message (Optional)"
+              className="w-full p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500 resize-none"
+            ></textarea>
+
             <button
               type="submit"
               disabled={isSubmitting}

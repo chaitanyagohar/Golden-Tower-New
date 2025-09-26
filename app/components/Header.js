@@ -44,10 +44,12 @@ const Header = () => {
 
     const navLinks = [
         { href: '#about', label: 'About' },
+        { href: '#gallery', label: 'Gallery' },
         { href: '#master-plan', label: 'Master Plan' },
         { href: '#floor-plans', label: 'Floor Plans' },
         { href: '#amenities', label: 'Amenities' },
         { href: '#location', label: 'Location' },
+
     ];
 
     return (

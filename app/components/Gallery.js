@@ -64,7 +64,7 @@ const Gallery = () => {
 
   return (
     // Removed container classes to make the section full-width
-    <section className="py-16 bg-gradient-to-br from-black to-gray-900" >
+    <section id="gallery" className="py-16 bg-gradient-to-br from-black to-gray-900" >
       <div className="container mx-auto px-4">
         <h2 className="text-4xl text-white font-bold text-center mb-12">Project Gallery</h2>
       </div>
