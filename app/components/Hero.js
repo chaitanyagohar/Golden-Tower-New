@@ -35,16 +35,16 @@ const Hero = () => {
                 <source src="/Hero-video.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
             </video>
-            <div className="absolute inset-0 bg-black/30 z-10"></div>
+            {/* <div className="absolute inset-0 bg-black/30 z-10"></div> */}
             <div className="relative z-20 text-center p-6 flex flex-col items-center">
                 <h1 className="shine-text text-5xl md:text-8xl font-extrabold uppercase tracking-widest mb-2">Golden Towers</h1>
-                <p className="shine-text text-lg md:text-2xl font-light mb-8 text-orange-300">Yelahanka , Kogilu Cross</p>
+                <p className=" text-lg md:text-2xl font-light mb-8 text-orange-300">Yelahanka , Kogilu Cross</p>
                 
                 <div className="space-y-4 my-6 max-w-lg">
                     {projectHighlights.map((item, index) => (
                         <div key={index} className="bg-black/30 p-4 rounded-lg flex items-center text-left">
                             <div className="text-orange-300 mr-4">{item.icon}</div>
-                            <span className="shine-text text-base font-medium">{item.text}</span>
+                            <span className="\ text-base font-medium">{item.text}</span>
                         </div>
                     ))}
                 </div>

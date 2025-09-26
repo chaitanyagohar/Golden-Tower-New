@@ -48,7 +48,7 @@ const FloorPlanCard = ({ plan, onViewPlan }) => {
                 <div className="flex flex-col sm:flex-row gap-4">
                     {/* This button now triggers the image lightbox */}
                     <button onClick={() => onViewPlan(plan.image)} className="bg-gradient-to-r from-yellow-500 to-yellow-600 text-black px-6 py-3 rounded-md font-bold transition hover:bg-white">View Plan</button>
-                    <button onClick={openLightbox} className="bg-transparent border border-white text-white px-6 py-3 rounded-md font-bold transition hover:bg-white hover:text-black">Download Brochure</button>
+                    <button onClick={openLightbox} className="shine-text bg-transparent border border-white text-white px-6 py-3 rounded-md font-bold transition hover:bg-white hover:text-black">Download Brochure</button>
                 </div>
             </div>
         </div>
