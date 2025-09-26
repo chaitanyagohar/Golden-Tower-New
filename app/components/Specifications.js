@@ -44,7 +44,7 @@ const Specifications = () => {
                             <ul className="space-y-3">
                                 {items.map(item => (
                                     <li key={item} className="flex items-start">
-                                        <FiCheckCircle className="text-blue-600 mr-3 mt-1 flex-shrink-0" />
+                                        <FiCheckCircle className="text-amber-600 mr-3 mt-1 flex-shrink-0" />
                                         <span className="text-gray-600">{item}</span>
                                     </li>
                                 ))}

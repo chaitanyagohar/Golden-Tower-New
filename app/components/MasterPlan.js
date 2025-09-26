@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const MasterPlan = () => {
     return (
-        <section id="master-plan" className="relative h-screen w-full overflow-hidden flex items-center justify-center">
+        <section id="master-plan" className="relative w-full overflow-hidden flex items-center justify-center">
             <div className="absolute inset-0">
                 <Image
                     id="masterplan-img-parallax"

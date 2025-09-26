@@ -31,7 +31,7 @@ const Location = () => {
                         <ul className="space-y-4">
                             {locationBenefits.map(item => (
                                 <li key={item.text} className="benefit-item flex items-center text-lg text-gray-600">
-                                    <span className="text-blue-600 mr-4">{item.icon}</span>
+                                    <span className="text-amber-600 mr-4">{item.icon}</span>
                                     {item.text}
                                 </li>
                             ))}
