@@ -2,7 +2,7 @@ import { FaMapMarkerAlt } from "react-icons/fa";
 
 const locationBenefits = [
     { text: '5 Mins to Major Tech Park', icon: <FaMapMarkerAlt /> },
-    { text: '10 Mins to Metro Station', icon: <FaMapMarkerAlt /> },
+    { text: '1 Mins to Metro Station', icon: <FaMapMarkerAlt /> },
     { text: 'Close to International Schools', icon: <FaMapMarkerAlt /> },
     { text: 'Nearby Premium Hospitals & Malls', icon: <FaMapMarkerAlt /> },
 ];
