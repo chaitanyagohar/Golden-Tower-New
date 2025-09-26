@@ -6,12 +6,12 @@ import { FiChevronLeft, FiChevronRight, FiPlay, FiPause } from 'react-icons/fi';
 
 // --- Place your image data here ---
 const sliderImages = [
-  { src: '/image_1.png', alt: 'A beautiful landscape' },
-  { src: '/image_2.png', alt: 'A modern architectural building' },
-  { src: '/Image_7.png', alt: 'A bustling city street at night' },
-  { src: '/scene 52.png', alt: 'Close-up of a colorful flower' },
-  { src: '/image_18.png', alt: 'Close-up of a colorful flower' },
-  { src: '/image_20.png', alt: 'Close-up of a colorful flower' },
+  { src: '/Scene 57.png', alt: 'A beautiful landscape' },
+  { src: '/Image_2.png', alt: 'A modern architectural building' },
+  { src: '/Scene 7.png', alt: 'A bustling city street at night' },
+  { src: '/Scene 52.png', alt: 'Close-up of a colorful flower' },
+  { src: '/Image_18.png', alt: 'Close-up of a colorful flower' },
+  { src: '/Image_20.png', alt: 'Close-up of a colorful flower' },
 ];
 // ------------------------------------
 
