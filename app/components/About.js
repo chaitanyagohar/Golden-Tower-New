@@ -18,7 +18,7 @@ const About = () => {
                         <Image src="/image_1.png" alt="Elegant living room" fill sizes="50vw" className="object-cover" />
                     </div>
                     <div id="about-image-2" className="absolute bottom-0 right-0 w-2/3 h-2/3 rounded-lg shadow-2xl overflow-hidden border-8 border-white">
-                         <Image src="/image_6.png" alt="View from the balcony" fill sizes="50vw" className="object-cover" />
+                         <Image src="/image_2.png" alt="View from the balcony" fill sizes="50vw" className="object-cover" />
                     </div>
                 </div>
             </div>
