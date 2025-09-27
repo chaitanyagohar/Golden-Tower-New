@@ -1,7 +1,7 @@
 import { Montserrat } from 'next/font/google';
 import Script from 'next/script';
 import { LightboxProvider } from '@/app/context/LightboxContext';
-import { GA_TRACKING_ID } from '../lib/gtag'; // Make sure lib/gtag.js exists
+import { GA_TRACKING_ID, SECONDARY_GA_ID } from '../lib/gtag'; // Updated lib/gtag.js
 import './globals.css';
 
 const montserrat = Montserrat({
@@ -31,7 +31,14 @@ export default function RootLayout({ children }) {
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
+
+            // Main GA property
             gtag('config', '${GA_TRACKING_ID}', {
+              page_path: window.location.pathname,
+            });
+
+            // Second global GA property
+            gtag('config', '${SECONDARY_GA_ID}', {
               page_path: window.location.pathname,
             });
           `,
@@ -42,7 +49,6 @@ export default function RootLayout({ children }) {
       <body className={`${montserrat.variable} font-sans bg-white`}>
         <LightboxProvider>
           {children}
-          {/* <StickyEnquireButton /> */}
         </LightboxProvider>
       </body>
     </html>
