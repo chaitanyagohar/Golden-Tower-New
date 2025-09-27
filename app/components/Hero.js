@@ -19,7 +19,7 @@ const Hero = () => {
     // Key project details
     const projectHighlights = [
         { icon: <FaHome size={20} />, text: 'Premium 3 & 4 BHKs with Community Living' },
-        { icon: <FaMapMarkerAlt size={20} />, text: 'Multiple Towers with Acres of Total Land Parcel' },
+        { icon: <FaMapMarkerAlt size={20} />, text: '3.1 Acres of Land with 30 + Amenities' },
         { icon: <FaStar size={20} />, text: '2 mins walk from upcoming Kogilu Metro Station' },
     ];
 

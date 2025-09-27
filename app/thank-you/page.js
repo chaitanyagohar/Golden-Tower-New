@@ -3,15 +3,20 @@
 import { useRouter } from 'next/navigation';
 import { useEffect } from 'react';
 import { FiCheckCircle } from 'react-icons/fi';
+import { thankYouPageview } from '@/lib/gtag';
 
 export default function ThankYouPage() {
   const router = useRouter();
 
-  // Auto-redirect to home after 5 seconds
   useEffect(() => {
+    // Fire Thank You pageview + conversion event
+    thankYouPageview();
+
+    // Redirect after 5 seconds
     const timer = setTimeout(() => {
       router.push('/');
     }, 5000);
+
     return () => clearTimeout(timer);
   }, [router]);
 
@@ -26,7 +31,9 @@ export default function ThankYouPage() {
         {/* Thank You Text */}
         <h1 className="text-4xl font-bold text-gray-900 mb-4">Thank You!</h1>
         <p className="text-gray-600 text-lg mb-6">
-          Your enquiry has been received. A representative from <span className="font-semibold text-yellow-600">Golden Tower</span> will contact you shortly with exclusive details.
+          Your enquiry has been received. A representative from{' '}
+          <span className="font-semibold text-yellow-600">Golden Tower</span>{' '}
+          will contact you shortly with exclusive details.
         </p>
 
         {/* Back Home Button */}
