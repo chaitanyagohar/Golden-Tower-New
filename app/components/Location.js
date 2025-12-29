@@ -15,10 +15,15 @@ const Location = () => {
                     Prime Location & Connectivity
                 </h2>
                 <div className="grid lg:grid-cols-2 gap-12 items-center">
-                    <div className="location-map-container h-96 md:h-[500px] rounded-lg shadow-2xl overflow-hidden">
-                        {/* --- CORRECTED THIS LINE --- */}
+                    {/* Added bg-gray-100 to show a placeholder color while map loads */}
+                    <div className="location-map-container h-96 md:h-[500px] rounded-lg shadow-2xl overflow-hidden bg-gray-100">
+                        {/* PERFORMANCE UPDATE: 
+                            1. Added 'title' for Accessibility Score 
+                            2. Kept loading='lazy' (Crucial for TBT)
+                        */}
                         <iframe 
                             src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7771.855168934246!2d77.598704!3d13.103774!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae19bd0a262743%3A0x5526717bd7cc6d61!2sSLV%20Golden%20Towers!5e0!3m2!1sen!2sin!4v1758880365723!5m2!1sen!2sin" 
+                            title="Project Location Map"
                             className="w-full h-full" 
                             style={{ border: 0 }} 
                             allowFullScreen="" 
@@ -29,8 +34,8 @@ const Location = () => {
                     <div className="location-benefits-list">
                         <h3 className="text-3xl font-bold text-gray-800 mb-6">Key Advantages:</h3>
                         <ul className="space-y-4">
-                            {locationBenefits.map(item => (
-                                <li key={item.text} className="benefit-item flex items-center text-lg text-gray-600">
+                            {locationBenefits.map((item, index) => (
+                                <li key={index} className="benefit-item flex items-center text-lg text-gray-600">
                                     <span className="text-amber-600 mr-4">{item.icon}</span>
                                     {item.text}
                                 </li>

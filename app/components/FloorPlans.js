@@ -5,8 +5,8 @@ import { useLightbox } from '@/app/context/LightboxContext';
 import { FiX } from 'react-icons/fi';
 
 const plans = [
-    { name: '3 BHK', size: '1,350-1,600 sq. ft.', image: '/3-bhk.png' },
-    { name: '4 BHK', size: '2,000 sq. ft.', image: '/4-bhk.png' },
+    { name: '3 BHK', size: '1,350-1,600 sq. ft.', image: '/3-bhk.webp' },
+    { name: '4 BHK', size: '2,000 sq. ft.', image: '/4-bhk.webp' },
 ];
 
 // A new, dedicated component for displaying the image in a lightbox

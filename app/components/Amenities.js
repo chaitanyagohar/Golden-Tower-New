@@ -6,22 +6,22 @@ import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
 
 const amenityImages = [
     { 
-        src: '/10.png', 
+        src: '/10.webp', 
         title: 'Aquatic Oasis',
         description: "Escape the heat and dive into our resort-style swimming pool, featuring a dedicated and safe kids\' area for family fun under the sun."
     },
     { 
-        src: '/8.png', 
+        src: '/8.webp', 
         title: 'State-of-the-Art Fitness Center',
         description: "Achieve your health and wellness goals in our fully-equipped gym, complete with modern cardio machines and a comprehensive range of strength training equipment."
     },
     { 
-        src: '/9.png', 
+        src: '/9.webp', 
         title: 'Indoor Recreation Zone',
         description: "Unwind and challenge your friends in our vibrant games room, the perfect spot for a friendly match of pool, foosball, or table tennis."
     },
     { 
-        src: '/12.png', 
+        src: '/12.webp', 
         title: 'Lush Event Lawn & Gardens',
         description: "Host memorable celebrations or enjoy a moment of peace in our beautifully landscaped gardens and expansive party lawn."
     },

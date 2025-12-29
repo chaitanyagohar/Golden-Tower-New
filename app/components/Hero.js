@@ -25,26 +25,35 @@ const Hero = () => {
 
     return (
         <section id="hero" className="relative h-screen w-full flex items-center justify-center text-white overflow-hidden">
+            {/* PERFORMANCE FIXES:
+                1. poster: Shows an image INSTANTLY while video loads. (You must create this image!)
+                2. preload="auto": Tells browser to prioritize this download since it's above the fold.
+            */}
             <video 
                 autoPlay 
                 loop 
                 muted 
                 playsInline 
+                preload="auto"
+                poster="/hero-thumbnail.webp" 
                 className="absolute z-0 w-full h-full object-cover scale-125"
             >
                 <source src="/Hero-video.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
             </video>
-            {/* <div className="absolute inset-0 bg-black/30 z-10"></div> */}
+            
+            {/* Dark overlay for better text readability */}
+            <div className="absolute inset-0 bg-black/40 z-10 pointer-events-none"></div>
+
             <div className="relative z-20 text-center p-6 flex flex-col items-center">
                 <h1 className="shine-text text-5xl md:text-8xl font-extrabold uppercase tracking-widest mb-2">Golden Towers</h1>
                 <p className=" text-lg md:text-2xl font-light mb-8 text-orange-300">Yelahanka , Kogilu Cross</p>
                 
                 <div className="space-y-4 my-6 max-w-lg">
                     {projectHighlights.map((item, index) => (
-                        <div key={index} className="bg-black/30 p-4 rounded-lg flex items-center text-left">
+                        <div key={index} className="bg-black/30 backdrop-blur-sm p-4 rounded-lg flex items-center text-left border border-white/10">
                             <div className="text-orange-300 mr-4">{item.icon}</div>
-                            <span className="\ text-base font-medium">{item.text}</span>
+                            <span className="text-base font-medium">{item.text}</span>
                         </div>
                     ))}
                 </div>

@@ -10,7 +10,7 @@ const MasterPlan = () => {
             <div className="relative w-full max-w-6xl aspect-[16/9]">
                 <Image
                     id="masterplan-img-parallax"
-                    src="/masterplan.png"
+                    src="/masterplan.webp"
                     alt="Project master plan"
                     fill
                     sizes="100vw"

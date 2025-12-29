@@ -1,3 +1,4 @@
+'use client';
 import Image from 'next/image';
 
 const About = () => {
@@ -15,10 +16,29 @@ const About = () => {
                 </div>
                 <div className="relative h-96 md:h-[600px]">
                     <div id="about-image-1" className="absolute top-0 left-0 w-3/4 h-3/4 rounded-lg shadow-2xl overflow-hidden">
-                        <Image src="/Image_1.png" alt="Elegant living room" fill sizes="50vw" className="object-cover" />
+                        {/* OPTIMIZATION: 
+                           1. sizes: specific mobile vs desktop sizing
+                           2. quality: 75 is the sweet spot
+                           3. src: assuming .webp conversion
+                        */}
+                        <Image 
+                            src="/Image_1.webp" 
+                            alt="Elegant living room" 
+                            fill 
+                            sizes="(max-width: 768px) 100vw, 50vw" 
+                            quality={75}
+                            className="object-cover" 
+                        />
                     </div>
                     <div id="about-image-2" className="absolute bottom-0 right-0 w-2/3 h-2/3 rounded-lg shadow-2xl overflow-hidden border-8 border-white">
-                         <Image src="/Image_2.png" alt="View from the balcony" fill sizes="50vw" className="object-cover" />
+                         <Image 
+                            src="/Image_2.webp" 
+                            alt="View from the balcony" 
+                            fill 
+                            sizes="(max-width: 768px) 100vw, 50vw" 
+                            quality={75}
+                            className="object-cover" 
+                        />
                     </div>
                 </div>
             </div>
