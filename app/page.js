@@ -4,54 +4,38 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import dynamic from 'next/dynamic'; // 1. Import dynamic
 
+// 2. Keep Above-the-Fold components as standard imports (Instant Load)
 import Header from '@/app/components/Header';
 import Hero from '@/app/components/Hero';
 
-// --- REFLOW FIX START ---
-// We create a simple placeholder div with a fixed height.
-// This prevents the "Forced Reflow" warning in your screenshot.
-const LoadingFallback = ({ height }) => (
-  <div className={`w-full ${height} bg-gray-50 animate-pulse`} />
-);
+// 3. Lazy Load "Below-the-Fold" components to reduce initial bundle size
+// This makes the site interactive much faster.
+const About = dynamic(() => import('@/app/components/About'));
+const MasterPlan = dynamic(() => import('@/app/components/MasterPlan'));
+const FloorPlans = dynamic(() => import('@/app/components/FloorPlans'));
+const Amenities = dynamic(() => import('@/app/components/Amenities'));
+const Specifications = dynamic(() => import('@/app/components/Specifications'));
+const Location = dynamic(() => import('@/app/components/Location'));
+const Footer = dynamic(() => import('@/app/components/Footer'));
+const Gallery = dynamic(() => import('./components/Gallery'));
 
-// We attach the loading fallback to every heavy component.
-const About = dynamic(() => import('@/app/components/About'), {
-  loading: () => <LoadingFallback height="h-[800px]" />
-});
-const MasterPlan = dynamic(() => import('@/app/components/MasterPlan'), {
-  loading: () => <LoadingFallback height="h-[800px]" />
-});
-const FloorPlans = dynamic(() => import('@/app/components/FloorPlans'), {
-  loading: () => <LoadingFallback height="h-[800px]" />
-});
-const Amenities = dynamic(() => import('@/app/components/Amenities'), {
-  loading: () => <LoadingFallback height="h-[600px]" />
-});
-const Specifications = dynamic(() => import('@/app/components/Specifications'), {
-  loading: () => <LoadingFallback height="h-[500px]" />
-});
-const Location = dynamic(() => import('@/app/components/Location'), {
-  loading: () => <LoadingFallback height="h-[600px]" />
-});
-const Footer = dynamic(() => import('@/app/components/Footer'), {
-    loading: () => <LoadingFallback height="h-64 bg-black" />
-});
-const Gallery = dynamic(() => import('./components/Gallery'), {
-  loading: () => <LoadingFallback height="h-[70vh]" />
+// 4. Heavy interactive components that are hidden initially
+// ssr: false means "Don't build this on the server, only load on client".
+const Lightbox = dynamic(() => import('@/app/components/Lightbox'), {
+  ssr: false,
 });
 
-// Lightbox is hidden, so no placeholder needed.
-const Lightbox = dynamic(() => import('@/app/components/Lightbox'), { ssr: false });
-// --- REFLOW FIX END ---
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Home() {
     useEffect(() => {
-        // We delay GSAP slightly to ensure the hydration matches
+        // We use a slight delay or check to ensure DOM is ready for GSAP
+        // since we are now lazy loading chunks.
         let ctx = gsap.context(() => {
             
             // About Section Animations
+            // Note: Since 'About' is now dynamic, ensure these IDs exist in the About component HTML
             gsap.from("#about-text-content", {
                 scrollTrigger: { trigger: "#about", start: "top 70%" },
                 opacity: 0, x: 50, duration: 1
@@ -66,6 +50,7 @@ export default function Home() {
             });
 
             // Section Title Animations
+            // We use ScrollTrigger.refresh() later to account for lazy loaded height changes
             gsap.utils.toArray('.container h2').forEach(heading => {
                 gsap.from(heading, {
                     scrollTrigger: { trigger: heading, start: 'top 85%' },
@@ -74,7 +59,7 @@ export default function Home() {
             });
 
             // Floor Plan Card Animations
-             gsap.from(".floorplan-card", {
+            gsap.from(".floorplan-card", {
                 scrollTrigger: { trigger: "#floor-plans", start: "top 70%" },
                 opacity: 0, y: 50, duration: 0.8, stagger: 0.2
             });
